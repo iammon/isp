@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Weather Component</title>
+        <!-- Import React and ReactDOM from a CDN -->
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <!-- Import Babel.js to transpile JSX code into JavaScript -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div> <!-- A div where the React component will be rendered -->
+       
+        <!-- React JSX code transpiled by Babel -->
+        <script type="text/babel">
+            // Define the App component that includes the WeatherComponent
+            function App() {
+                // Define the WeatherComponent, which has a counter and dynamic text
+                const WeatherComponent = (props) => {
+                    const [count, setCount] = React.useState(0);  // React useState hook for managing state
+
+                    // React useEffect hook to initialize the counter to 1 after the component renders
+                    React.useEffect(() => {
+                        setCount(1);
+                    }, []);
+
+                    // Render the weather and the counter
+                    return (
+                        <h1 onClick={() => setCount(count + 1)}>
+                            The weather is {props.weather}, 
+                            and the counter shows {count}
+                        </h1>
+                    );
+                };
+                
+                // Render the WeatherComponent with a weather prop
+                return (<WeatherComponent weather="sunny" />);
+            }
+
+            // Mount the App component onto the 'root' div
+            const container = document.getElementById("root");
+            const root = ReactDOM.createRoot(container);
+            root.render(<App />);
+        </script>
+    </body>
+</html>
