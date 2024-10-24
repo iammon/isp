@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "esModuleInterop": true,    // Allows TypeScript to work with CommonJS modules
+      "module": "es6",            // Use ES6 modules
+      "moduleResolution": "node", // Resolve modules as Node.js does
+      "target": "es6",            // Transpile to ES6 for compatibility
+      "noImplicitAny": true       // Disallow implicit use of the "any" type
+    }
+  }
