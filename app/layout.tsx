@@ -1,18 +1,18 @@
-// app/layout.tsx
+// app/layout.tsx (Updated with navigation)
 
-import "./globals.css"; // Import global CSS for styling across all pages
+import Link from "next/link"; // Import the Link component from Next.js
 
-export const metadata = {
-  title: "Next.js Example",  // Title of the web application
-  description: "Example Application with Next.js 13 features", // Meta description for SEO
-};
-
-// Root layout component that wraps all pages
+// Root layout component that includes a navigation bar
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
-        {/* children represents the content of each page */}
+        {/* Navigation bar with links to different routes */}
+        <nav>
+          <Link href="/components/weather">Weather Component</Link> |{" "}
+          <Link href="/components/server-component">Server Component</Link>
+        </nav>
+        {/* Render the content of the current page */}
         {children}
       </body>
     </html>
