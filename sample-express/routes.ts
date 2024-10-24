@@ -38,4 +38,4 @@ const queryWeatherData = (query: WeatherQueryInterface): WeatherDetailType => {
 };
 
 // Export the two functions so they can be imported and used in other parts of the application.
-export { routeHello, routeAPINames };
+export { routeHello, routeAPINames, routeWeather };
