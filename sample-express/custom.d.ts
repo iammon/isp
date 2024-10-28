@@ -15,4 +15,8 @@ type responseItemType = {
   interface WeatherQueryInterface {
     zipcode: string;
   }
+
+  interface LayoutProps {
+    children: React.ReactNode;
+}
   
